@@ -1,0 +1,8 @@
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+scikit-learn>=1.4
+tensorflow>=2.16
+scikeras>=0.13
+shap>=0.44
+jupyter>=1.0
