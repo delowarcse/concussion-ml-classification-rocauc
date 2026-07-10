@@ -1,4 +1,4 @@
-# Machine Learning and Deep Learning Models for Concussion History Classification in Youth Ice Hockey Players
+# Machine and deep learning models do not distinguish concussion history from clinical and robotic assessments in youth ice hockey players
 
 This repository contains the analysis code accompanying the manuscript:
 
@@ -26,13 +26,17 @@ The features were used as inputs to several classification models tasked with di
 | `MainModel_Script_roc_auc.html` | Rendered HTML export of the main notebook, including all outputs, for reviewers who prefer not to run the code. |
 | `FeatureImportance_roc_auc.ipynb` | Feature importance analysis notebook (SHAP based) for the trained models. |
 | `FeatureImportance_roc_auc.html` | Rendered HTML export of the feature importance notebook. |
+| `cliffs_delta.m` | Function to compute Cliff's delta. |
+| `Code for descriptives_EffectSizes_ROC_AUC_PR_AUC.m` | Script that calculates the reported descriptives. |
+
+Matlab function to calculate Cliff's delta, Cohen's d, and ROC/PR AUC for the individual clinical and robotic parameters
 
 ### Data files (not included)
 
 The notebooks expect the following two input files in the working directory:
 
-- `S2P_Combined_WithHistory_20260111_TC.csv` (participants with a history of concussion)
-- `S2P_Combined_NoHistory_20260111_TC.csv` (participants without a history of concussion)
+- `SS2P_Combined_WithHistory.csv` (participants with a history of concussion)
+- `S2P_Combined_NoHistory.csv` (participants without a history of concussion)
 
 These files contain robotic and clinical features. They are **not** distributed in this repository because participants did not consent to posting the data on a public repository. Each row is one participant and each column is one feature; the two files share the same feature columns. During loading, the two files are concatenated and a binary label column (`data_type`) is added, where `1` indicates concussion history and `0` indicates no concussion history.
 
